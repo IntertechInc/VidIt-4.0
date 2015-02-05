@@ -1,0 +1,7 @@
+This application is used as part of the Complete Android course taught at Intertech, Inc.<br/>
+<br/>
+In just 5 days, you will learn how to create your own apps using Java and the Android SDK!<br/>
+<br/>
+You can learn more about the Complete Android course and other courses offered by Intertech at:<br/>
+<br/>
+<a href="http://www.intertech.com">www.intertech.com</a>

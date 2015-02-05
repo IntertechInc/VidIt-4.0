@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) Intertech, Inc. - All Rights Reserved
+    * Unauthorized copying of this file, via any medium is strictly prohibited
+    * Proprietary and confidential
+    * Written by Jim White <jwhite@intertech.com>, February 2015
+    *
+    * Created by jwhite on 1/25/2015.
+    */
+    -->
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    card_view:cardCornerRadius="@dimen/card_corner_radius">
+
+    <RelativeLayout
+        android:id="@+id/cardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/view_padding">
+
+        <CheckBox
+            android:id="@+id/favoriteItemCB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+        <ImageView
+            android:id="@+id/favoriteItemThumbnailIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/favoriteItemCB"
+            android:src="@drawable/vidit" />
+
+        <TextView
+            android:id="@+id/favoriteItemTitleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/favoriteItemThumbnailIV"
+            android:ellipsize="end"
+            android:paddingLeft="@dimen/view_padding"
+            android:text="@string/favorite_item_title_default"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/favoriteItemArtistTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/favoriteItemTitleTV"
+            android:paddingLeft="@dimen/view_padding"
+            android:text="@string/favorite_item_artist_default"
+            android:textSize="@dimen/title_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/favoriteVideoTitleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/view_padding"
+            android:text="@string/favorite_item_video_title_default"
+            android:layout_below="@+id/favoriteItemTitleTV"
+            android:layout_toRightOf="@+id/favoriteItemThumbnailIV"
+            android:layout_toEndOf="@+id/favoriteItemThumbnailIV" />
+
+        <TextView
+            android:id="@+id/favoriteVideoURL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/view_padding"
+            android:text="@string/favorite_item_url_default"
+            android:layout_below="@+id/favoriteVideoTitleTV"
+            android:layout_toRightOf="@+id/favoriteItemThumbnailIV"
+            android:layout_toEndOf="@+id/favoriteItemThumbnailIV"
+            />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

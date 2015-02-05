@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) Intertech, Inc. - All Rights Reserved
+* Unauthorized copying of this file, via any medium is strictly prohibited
+* Proprietary and confidential
+* Written by Jim White <jwhite@intertech.com>, February 2015
+*
+* Created by jwhite on 2/1/2015.
+*/
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/view_padding">
+
+    <ImageView
+        android:id="@+id/noteImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:padding="@dimen/view_padding"
+        android:src="@drawable/note" />
+
+    <EditText
+        android:id="@+id/manualTitleEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/noteImageView"
+        android:layout_toRightOf="@+id/noteImageView"
+        android:hint="@string/manual_title_hint"
+        android:imeOptions="actionNext"
+        android:inputType="textCapWords"
+
+        android:minEms="20"
+        android:nextFocusDown="@+id/manualArtistEditText"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageView
+        android:id="@+id/microphoneImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/noteImageView"
+        android:padding="@dimen/view_padding"
+        android:src="@drawable/microphone" />
+
+    <EditText
+        android:id="@+id/manualArtistEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/microphoneImageView"
+        android:layout_toRightOf="@+id/microphoneImageView"
+        android:hint="@string/manual_artist_hint"
+        android:imeOptions="actionDone"
+        android:inputType="textCapWords"
+        android:minEms="20"
+        android:nextFocusDown="@+id/findButton"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>

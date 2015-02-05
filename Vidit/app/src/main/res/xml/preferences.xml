@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:defaultValue="@string/preferneces_video_order_default"
+        android:dialogTitle="@string/preferences_video_order_dialog_title"
+        android:entries="@array/video_order"
+        android:entryValues="@array/video_order"
+        android:key="preference_video_order"
+        android:summary="@string/preferences_video_order_desc"
+        android:title="@string/preferences_video_order_label" />
+    <EditTextPreference
+        android:key="preferences_max_videos"
+        android:title="@string/preferences_max_video_label"
+        android:summary="@string/preferences_max_video_desc"
+        android:defaultValue="@string/preferences_max_video_default"
+        android:inputType="number"/>
+    <CheckBoxPreference
+        android:defaultValue="@string/preferences_display_video_url_default"
+        android:key="preference_display_video_url"
+        android:summary="@string/preferences_display_video_urls_desc"
+        android:title="@string/preferences_display_video_urls_label" />
+</PreferenceScreen>

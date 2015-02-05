@@ -1,0 +1,7 @@
+Add count lister that tells user how many requests they can make a day (based on Google 3000 requests per user per day) and units per day.
+check for quota exception
+
+Add video image to display offering
+
+Settings
+include URL changer

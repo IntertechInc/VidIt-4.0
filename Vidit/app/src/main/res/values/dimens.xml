@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) Intertech, Inc. - All Rights Reserved
+    * Unauthorized copying of this file, via any medium is strictly prohibited
+    * Proprietary and confidential
+    * Written by Jim White <jwhite@intertech.com>, February 2015
+    *
+    * Created by jwhite on 1/25/2015.
+    */
+    -->
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+
+    <dimen name="title_text_size">20sp</dimen>
+
+    <dimen name="view_padding">10dp</dimen>
+    <dimen name="action_bar_icon_padding">10dp</dimen>
+    <dimen name="card_corner_radius">4dp</dimen>
+
+</resources>

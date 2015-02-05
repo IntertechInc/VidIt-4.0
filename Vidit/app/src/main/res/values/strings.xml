@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) Intertech, Inc. - All Rights Reserved
+    * Unauthorized copying of this file, via any medium is strictly prohibited
+    * Proprietary and confidential
+    * Written by Jim White <jwhite@intertech.com>, February 2015
+    *
+    * Created by jwhite on 1/25/2015.
+    */
+    -->
+<resources>
+
+    <string name="app_name">Vid-it</string>
+
+    <string name="favorites_title">Current Favorites</string>
+    <string name="find_videos_title">Matching Videos</string>
+    <string name="about_title">About</string>
+    <string name="manual_query_title">Vid-it Manual Query</string>
+    <string name="settings_title">Vid-it Settings</string>
+
+    <!-- credit screen -->
+    <string name="credit">by Intertech</string>
+    <string name="dismiss">Dismiss</string>
+
+    <!-- Favorite Item Display -->
+    <string name="favorite_item_title_default">Favorite Title</string>
+    <string name="favorite_item_artist_default">Artist</string>
+    <string name="favorite_item_video_title_default">Video Title</string>
+    <string name="favorite_item_video_title_label">YouTube Title:</string>
+    <string name="favorite_item_url_default">Video URL</string>
+
+    <!-- Selected Video Display -->
+    <string name="title_activity_finder">Vid-it Find Videos</string>
+    <string name="video_title_default">Title</string>
+    <string name="video_description_default">Description</string>
+
+    <!-- Toast Displays -->
+    <string name="toast_no_favorites">Use the menu to add favorites</string>
+    <string name="toast_unknown_error">App error - contact Intertech</string>
+    <string name="toast_no_connectivity">Internet connection required</string>
+    <string name="toast_invalid_track_url">Track URL invalid</string>
+    <string name="toast_no_track_selected">No song selected</string>
+    <string name="toast_favorite_removed">Favorite removed</string>
+    <string name="toast_favorite_added">Favorite added</string>
+    <string name="toast_no_favorites_selected">No favorites selected</string>
+
+    <!-- Dialog Display -->
+    <string name="vidit_yes">Yes</string>
+    <string name="vidit_no">No</string>
+    <string name="save_video_dialog_title">Vid-it Save</string>
+    <string name="save_video_question">Add to favorites?</string>
+    <string name="duplicate_video">Duplicate favorite detected</string>
+    <string name="duplicate_detected">%1$s already in your favorites</string>
+    <string name="remove_favorites_title">Vid-it Remove</string>
+    <string name="remove_favorites">Remove selected favorites?</string>
+    <string name="no_videos_title">Sorry</string>
+    <string name="no_videos_found">No videos found.  Try a different song?</string>
+
+    <!-- About display -->
+    <string name="info_label">About Vid-it from Intertech, Inc.</string>
+    <string name="providedby_label">Provided by Intertech, Inc. (www.intertech.com)</string>
+    <string name="title_about_activity">About Vid-it</string>
+
+    <!--Manual Query display -->
+    <string name="manual_title_hint">Song title</string>
+    <string name="manual_artist_hint">Song artitst</string>
+    <string name="error_no_title_or_artist">Title and artist must be provided.</string>
+
+    <!-- Action/menu options -->
+    <string name="menu_settings">Settings</string>
+    <string name="menu_find">Find Video</string>
+    <string name="menu_remove">Remove Favorites</string>
+    <string name="menu_about">About Vid-it</string>
+    <string name="menu_manual_query">Manual Search</string>
+
+    <!-- Preferences -->
+    <string name="preferences_video_order_label">Video order</string>
+    <string name="preferences_video_order_dialog_title">Video order</string>
+    <string name="preferences_video_order_desc">Display order for videos returned from YouTube</string>
+    <string name="preferneces_video_order_default">relevance</string>
+    <string name="preferences_display_video_urls_label">Display URLs</string>
+    <string name="preferences_display_video_urls_desc">Display Favorite YouTube Video URLs</string>
+    <string name="preferences_display_video_url_default">true</string>
+    <string name="preferences_max_video_label">Max Videos</string>
+    <string name="preferences_max_video_desc">Maximum number of videos to display from YouTube search</string>
+    <string name="preferences_max_video_default">50</string>
+    <array name="video_order">
+        <item>date</item>
+        <item>rating</item>
+        <item>relevance</item>
+        <item>title</item>
+        <item>videoCount</item>
+        <item>viewCount</item>
+    </array>
+
+</resources>
