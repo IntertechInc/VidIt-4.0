@@ -6,15 +6,13 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.widget.TextView;
 
 import com.intertech.vidit.R;
+import com.intertech.vidit.support.GoogleAnalytics;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-
-import static com.intertech.vidit.support.ViditApplication.LOG_TAG;
 
 /* Copyright (C) Intertech, Inc. - All Rights Reserved
  * Unauthorized copying of this file, via any medium is strictly prohibited
@@ -43,6 +41,12 @@ public class AboutActivity extends ActionBarActivity {
         infoTask.execute();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        GoogleAnalytics.getInstance().sendScreenView(getClass().getSimpleName());
+    }
+
     //AsyncTask to read info text from raw text file and post to TextView.
     private class ReadInfoTask extends AsyncTask<Void, Void, String> {
         protected String doInBackground(Void... args) {
@@ -58,7 +62,7 @@ public class AboutActivity extends ActionBarActivity {
                 }
                 inputStream.close();
             } catch (Exception e) {
-                Log.e(LOG_TAG, "Error reading info text.");
+                // Log.e(LOG_TAG, "Error reading info text.");
                 e.printStackTrace();
                 Resources res = getResources();
                 return (res.getString(R.string.providedby_label));

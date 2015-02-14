@@ -1,7 +1,14 @@
-This application is used as part of the Complete Android course taught at Intertech, Inc.<br/>
+<b>Vid-iT</b> allows you to locate YouTube videos matching the music collection stored on your Android device.  Once you find videos that you like, you are able to add them to a "Favorites" list and replay them with a single click.  You can also locate and save favorite videos by searching with just a title and artist you enter by hand.  This simple and easy to use app works on smartphones and tablets.<br/>
 <br/>
-In just 5 days, you will learn how to create your own apps using Java and the Android SDK!<br/>
+<b>Intertech</b> designs and develops software solutions that power Fortune 500 businesses, mid-sized companies and state government. Intertech also works with major organizations such as NASA, Medtronic, Microsoft, the Mayo Foundation, and Intel around the United States helping their IT professionals to learn and use technology.<br/>
 <br/>
-You can learn more about the Complete Android course and other courses offered by Intertech at:<br/>
+Download the source code and play with it.  Find the code at Intertech's GitHub site:  <a href="https://github.com/IntertechInc/VidIt-4.0">https://github.com/IntertechInc/VidIt-4.0.</a><br/>
 <br/>
-<a href="http://www.intertech.com">www.intertech.com</a>
+This application is used as part of the Complete Android course taught at Intertech, Inc.  In just 5 days, you will learn how to create your own apps using Java and the Android SDK!  You can learn more about the Complete Android course and other courses offered by Intertech at <a href="http://www.intertech.com">www.intertech.com</a><br/>
+<br/>
+Follow us: <b>@IntertechInc</b> on Twitter | Facebook <a href="https://www.facebook.com/Intertech">https://www.facebook.com/Intertech</a><br/>
+<br/>
+See our <a href="http://www.intertech.com/About/Privacy"><b>privacy policy</b></a> regarding your privacy and information collected in this app.<br/>
+<br/>
+© Copyright 2015, Intertech, Inc. - all rights reserved.
+

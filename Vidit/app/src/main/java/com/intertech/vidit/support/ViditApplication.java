@@ -15,7 +15,7 @@ import com.intertech.vidit.R;
 public class ViditApplication extends Application {
 
     public static final String APP_NAME = "Vid-it";
-    public static final String LOG_TAG = "Vid-it";
+    //public static final String LOG_TAG = "Vid-it";
     public static final String TEST_LOG_TAG = "Vid-it-testing";
 
     public static final String AUDIO_MIME_TYPE = "audio/*";
@@ -48,7 +48,6 @@ public class ViditApplication extends Application {
     public static final String DATABASE_TABLE = "favorites";
 
     private boolean introDismissed = false;
-    private static ViditApplication singleton;
 
     public boolean isIntroDismissed() {
         return introDismissed;
@@ -63,16 +62,8 @@ public class ViditApplication extends Application {
         super.onCreate();
         // set the default preferences if not set yet
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
-    }
-
-    protected ViditApplication() {
-    }
-
-    public static ViditApplication getInstance() {
-        if (singleton == null) {
-            singleton = new ViditApplication();
-        }
-        return singleton;
+        // Setup Analytics
+        GoogleAnalytics.getInstance().initTracker(this);
     }
 
     // TEST QUERY URL

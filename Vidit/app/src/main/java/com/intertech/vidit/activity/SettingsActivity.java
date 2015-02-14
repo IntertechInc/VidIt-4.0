@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
 import com.intertech.vidit.R;
+import com.intertech.vidit.support.GoogleAnalytics;
 import com.intertech.vidit.ui.SettingsFragment;
 
 /* Copyright (C) Intertech, Inc. - All Rights Reserved
@@ -29,5 +30,11 @@ public class SettingsActivity extends ActionBarActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        GoogleAnalytics.getInstance().sendScreenView(getClass().getSimpleName());
     }
 }

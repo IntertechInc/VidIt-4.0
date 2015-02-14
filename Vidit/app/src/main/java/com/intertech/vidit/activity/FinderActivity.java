@@ -13,7 +13,6 @@ import android.provider.MediaStore;
 import android.support.v4.app.NavUtils;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,14 +22,13 @@ import com.intertech.vidit.R;
 import com.intertech.vidit.domain.SongQuery;
 import com.intertech.vidit.domain.YouTubeItem;
 import com.intertech.vidit.service.VideoListForSongTitleTask;
+import com.intertech.vidit.support.GoogleAnalytics;
 import com.intertech.vidit.ui.FinderFragment;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static com.intertech.vidit.support.ViditApplication.AUDIO_MIME_TYPE;
 import static com.intertech.vidit.support.ViditApplication.FIND_SONG_INTENT;
-import static com.intertech.vidit.support.ViditApplication.LOG_TAG;
 import static com.intertech.vidit.support.ViditApplication.PLAY_SONG_INTENT;
 import static com.intertech.vidit.support.ViditApplication.SONG_QUERY;
 import static com.intertech.vidit.support.ViditApplication.VIDEO_BROADCAST;
@@ -85,6 +83,12 @@ public class FinderActivity extends ActionBarActivity {
         LocalBroadcastManager.getInstance(this).registerReceiver(receiver, new IntentFilter(VIDEO_BROADCAST));
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        GoogleAnalytics.getInstance().sendScreenView(getClass().getSimpleName());
+    }
+
     private SongQuery getSongQuery(){
         if (getIntent().getExtras() != null) {
            return (SongQuery) getIntent().getExtras().getSerializable(SONG_QUERY);
@@ -97,7 +101,7 @@ public class FinderActivity extends ActionBarActivity {
         try {
             this.unregisterReceiver(receiver);
         } catch (Exception e) {
-            Log.d(LOG_TAG, "Unregistering already occurred on video broadcast");
+            // Log.d(LOG_TAG, "Unregistering already occurred on video broadcast");
         }
         if (videoTask != null) {
             videoTask.cancel(true);
@@ -131,7 +135,7 @@ public class FinderActivity extends ActionBarActivity {
         if (requestCode == FIND_SONG_INTENT) {
             if (resultCode == RESULT_OK) {
                 Uri musicURI = data.getData();
-                Log.d(LOG_TAG, "Song selected video:  " + musicURI);
+                // Log.d(LOG_TAG, "Song selected video:  " + musicURI);
                 // get the actual song info from the selected and call to get videos for it.
                 getSongFromMusicCollection(musicURI);
             } else {  // no song selected from music player - return to main with nothing
@@ -141,7 +145,7 @@ public class FinderActivity extends ActionBarActivity {
             }
             // returning from playing video on user selected video player
         } else if (requestCode == PLAY_SONG_INTENT) {
-            Log.d(LOG_TAG, "Video played and requesting permission to add to favorites.");
+            // Log.d(LOG_TAG, "Video played and requesting permission to add to favorites.");
             showSaveVideoFavoriteAlert();
         }
     }
@@ -190,8 +194,8 @@ public class FinderActivity extends ActionBarActivity {
         Cursor c = getContentResolver().query(musicURI, projs, null, null, null);
         c.moveToFirst();
         SongQuery selectedFavoriteItem = new SongQuery(c.getString(c.getColumnIndex(MediaStore.Audio.Media.ARTIST)), c.getString(c.getColumnIndex(MediaStore.Audio.Media.TITLE)));
-        Log.d(LOG_TAG, "Selected collection title is:  " + selectedFavoriteItem.getTitle());
-        Log.d(LOG_TAG, "selected collection artist is:  " + selectedFavoriteItem.getArtist());
+//        Log.d(LOG_TAG, "Selected collection title is:  " + selectedFavoriteItem.getTitle());
+//        Log.d(LOG_TAG, "selected collection artist is:  " + selectedFavoriteItem.getArtist());
         c.close();
         // execute async task to get video data
         requestSongsAsync(selectedFavoriteItem);
@@ -206,7 +210,7 @@ public class FinderActivity extends ActionBarActivity {
         @Override
         @SuppressWarnings("unchecked")
         public void onReceive(Context context, Intent intent) {
-            Log.d(LOG_TAG, "Receiver returned list of applicable videos");
+            // Log.d(LOG_TAG, "Receiver returned list of applicable videos");
             updateVideoList((ArrayList<YouTubeItem>) intent.getSerializableExtra(VIDEO_EXTRA));
         }
     }

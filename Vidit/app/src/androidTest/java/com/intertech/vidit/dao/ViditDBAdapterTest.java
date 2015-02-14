@@ -26,7 +26,7 @@ public class ViditDBAdapterTest extends AndroidTestCase {
             adapter = new ViditDBAdapter(getContext());
             adapter.open();
             long favorite_id = adapter.createFavorite(TEST_ARTIST[0], TEST_TITLE[0], TEST_URI[0], TEST_DESCRIPTION[0], TEST_VIDEO_TITLE[0], TEST_ID[0], TEST_THUMBNAIL[0]);
-            Log.d(TEST_LOG_TAG, "----->" + favorite_id);
+            // Log.d(TEST_LOG_TAG, "----->" + favorite_id);
             assertTrue(favorite_id > 0);
             List<FavoriteItem> items = adapter.getFavorites();
             for (FavoriteItem item : items) {  // should only be one item found
@@ -90,7 +90,7 @@ public class ViditDBAdapterTest extends AndroidTestCase {
         ViditDBAdapter adapter = new ViditDBAdapter(getContext());
         adapter.open();
         long favorite_id = adapter.createFavorite(TEST_ARTIST[0], TEST_TITLE[0], TEST_URI[0], TEST_DESCRIPTION[0], TEST_VIDEO_TITLE[0], TEST_ID[0], TEST_THUMBNAIL[0]);
-        Log.d(TEST_LOG_TAG, "----->" + favorite_id);
+        // Log.d(TEST_LOG_TAG, "----->" + favorite_id);
         assertTrue(favorite_id > 0);
         long failed_id = adapter.createFavorite(TEST_ARTIST[0], TEST_TITLE[0], TEST_URI[0], TEST_DESCRIPTION[0], TEST_VIDEO_TITLE[0], TEST_ID[0], TEST_THUMBNAIL[0]);
         assertEquals(-1, failed_id);

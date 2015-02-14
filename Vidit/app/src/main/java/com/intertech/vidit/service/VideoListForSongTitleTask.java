@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -27,7 +26,6 @@ import java.util.List;
 
 import static com.intertech.vidit.support.ViditApplication.APP_NAME;
 import static com.intertech.vidit.support.ViditApplication.GOOGLE_API_KEY;
-import static com.intertech.vidit.support.ViditApplication.LOG_TAG;
 import static com.intertech.vidit.support.ViditApplication.VIDEO_BROADCAST;
 import static com.intertech.vidit.support.ViditApplication.VIDEO_EXTRA;
 
@@ -65,19 +63,19 @@ public class VideoListForSongTitleTask extends AsyncTask<SongQuery, Void, ArrayL
 
     protected void onPostExecute(ArrayList<YouTubeItem> videos) {
         sendBroadcast(videos);
-        if (videos != null) {
-            Log.d(LOG_TAG, "Async Task complete - returning videos list, size: " + videos.size());
-        } else {
-            Log.d(LOG_TAG, "Async Task complete - no videos matching.");
-        }
+        // if (videos != null) {
+            // Log.d(LOG_TAG, "Async Task complete - returning videos list, size: " + videos.size());
+        // } else {
+            // Log.d(LOG_TAG, "Async Task complete - no videos matching.");
+        // }
     }
 
     private void sendBroadcast(ArrayList<YouTubeItem> videos) {
-        if (videos != null) {
-            Log.d(LOG_TAG, "# of videos found on YouTube:  " + videos.size());
-        } else {
-            Log.d(LOG_TAG, "# of videos found on YouTube:  " + 0);
-        }
+//        if (videos != null) {
+//            Log.d(LOG_TAG, "# of videos found on YouTube:  " + videos.size());
+//        } else {
+//            Log.d(LOG_TAG, "# of videos found on YouTube:  " + 0);
+//        }
         Intent intent = new Intent(VIDEO_BROADCAST);
         intent.putExtra(VIDEO_EXTRA, videos);
         LocalBroadcastManager.getInstance(context.getApplicationContext()).sendBroadcast(intent);
@@ -93,7 +91,7 @@ public class VideoListForSongTitleTask extends AsyncTask<SongQuery, Void, ArrayL
                     }
                 }).setApplicationName(APP_NAME).setYouTubeRequestInitializer(initializer).build();
                 YouTube.Search.List search = youtube.search().list(SEARCH_LIST);
-                Log.d(LOG_TAG, "Making YouTube request for:  " + query[0].getTitle() + "+" + query[0].getArtist());
+                // Log.d(LOG_TAG, "Making YouTube request for:  " + query[0].getTitle() + "+" + query[0].getArtist());
                 search.setQ(query[0].getTitle() + "+" + query[0].getArtist());
                 search.setType(SEARCH_TYPE);
                 search.setMaxResults(maxResults);

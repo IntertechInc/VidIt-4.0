@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.intertech.vidit.R;
 import com.intertech.vidit.domain.SongQuery;
+import com.intertech.vidit.support.GoogleAnalytics;
 import com.intertech.vidit.support.ViditApplication;
 import com.intertech.vidit.ui.MainFragment;
 
@@ -31,8 +32,6 @@ import static com.intertech.vidit.support.ViditApplication.SONG_QUERY;
  * Created by jwhite on 1/25/2015.
  */
 public class MainActivity extends ActionBarActivity {
-
-    // TODO french translation
 
     MainFragment fragment;
     AlertDialog flash;
@@ -54,11 +53,17 @@ public class MainActivity extends ActionBarActivity {
                     .add(R.id.container, fragment)
                     .commit();
         }
-        app = ViditApplication.getInstance();
+        app = (ViditApplication)this.getApplication();
         if (!app.isIntroDismissed()) {
             showCredits();
             app.setIntroDismissed(true);
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        GoogleAnalytics.getInstance().sendScreenView(getClass().getSimpleName());
     }
 
     @Override

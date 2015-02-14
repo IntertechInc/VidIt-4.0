@@ -3,9 +3,16 @@ package com.intertech.vidit.dao;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
-import static com.intertech.vidit.support.ViditApplication.*;
+import static com.intertech.vidit.support.ViditApplication.DATABASE_TABLE;
+import static com.intertech.vidit.support.ViditApplication.KEY_ARTIST;
+import static com.intertech.vidit.support.ViditApplication.KEY_DESCRIPTION;
+import static com.intertech.vidit.support.ViditApplication.KEY_ID;
+import static com.intertech.vidit.support.ViditApplication.KEY_ROWID;
+import static com.intertech.vidit.support.ViditApplication.KEY_THUMBNAIL;
+import static com.intertech.vidit.support.ViditApplication.KEY_TITLE;
+import static com.intertech.vidit.support.ViditApplication.KEY_URI;
+import static com.intertech.vidit.support.ViditApplication.KEY_VIDEO_TITLE;
 
 /* Copyright (C) Intertech, Inc. - All Rights Reserved
  * Unauthorized copying of this file, via any medium is strictly prohibited
@@ -24,7 +31,7 @@ public class ViditDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.i(LOG_TAG, "Creating database schema.");
+        // Log.i(LOG_TAG, "Creating database schema.");
         final String sql = "create table " + DATABASE_TABLE + " (" + KEY_ROWID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_ARTIST + " TEXT NOT NULL, " + KEY_TITLE + " TEXT NOT NULL, " + KEY_URI + " TEXT NOT NULL, " + KEY_DESCRIPTION + " TEXT, " + KEY_VIDEO_TITLE + " TEXT," + KEY_ID + " TEXT NOT NULL, " + KEY_THUMBNAIL + ")";
         db.execSQL(sql);
     }
@@ -35,9 +42,10 @@ public class ViditDBHelper extends SQLiteOpenHelper {
             final String drop = "drop table if exists " + DATABASE_TABLE;
             db.execSQL(drop);
             onCreate(db);
-        } else {
-            Log.i(LOG_TAG, "No schema to upgrade.");
         }
+        //else {
+            // Log.i(LOG_TAG, "No schema to upgrade.");
+        //}
     }
 
 }
